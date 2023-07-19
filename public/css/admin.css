@@ -1,0 +1,1225 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+
+:root{
+    --primary:#0b0449;
+    --secondary:#dfbec3;
+    --text :#8c8ba4;
+    --background:#fcf9f5;
+    --primary-font:'Marcellus',serif;
+    --secondary-font: 'Lato',sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+    scroll-behavior: smooth;
+}
+/*Login page start*/
+.login-container{
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+    gap: 5rem;
+}
+.login-svg-container>img{
+
+    width: 50vh;
+}
+.login-card{
+    height: 40vh;
+    width: 40vh;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.login-card-header{
+    flex: .5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: var(--primary);
+}
+.login-card-header>h1{
+
+    letter-spacing: 10px;
+    font-family: var(--secondary-font);
+}
+.login-card-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    flex: 2;
+
+}
+.input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    width: 90%;
+    background-color: white;
+
+    border: 1px solid var(--secondary);
+    transition: ease-in-out .3s;
+}
+
+.input-container>i{
+    padding: 1rem;
+    transition: ease-in-out .3s;
+    color: var(--secondary);
+}
+.input-container>input, .input-container>select{
+    display: flex;
+    flex: 1;
+    height: 100%;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+.input-container:has(input:focus)>i , .input-container:has(select:focus)>i{
+    color: var(--primary);
+
+
+}
+.input-container:has(input:focus), .input-container:has(select:focus){
+    border: 1px solid var(--primary);
+}
+.login-card-body>a{
+
+    color: var(--primary);
+    text-decoration: none;
+
+}
+.login-card-footer{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.login-card-footer>button{
+    font-size: 20px;
+    height: 40%;
+    width: 90%;
+    transition: ease-in-out .3s;
+    border: 1px solid var(--primary);
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+}
+.login-card-footer>button:hover{
+
+    background: none;
+    color: var(--primary);
+}
+/*Login page end*/
+/*Admin Layout start*/
+.layout-container{
+    display: flex;
+    flex-direction: row;
+    background-color: rebeccapurple;
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+}
+.layout-left{
+    background-color: var(--primary);
+    width: 20%;
+    height: 100vh;
+}
+.layout-right{
+    display: flex;
+    background-color: antiquewhite;
+    width: 80%;
+    height: 100%;
+    flex-direction: column;
+
+}
+.layout-content{
+
+    background-color: var(--background);
+    flex: 1;
+    overflow-y: scroll;
+}
+nav{
+    z-index: 3;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.navbar-dropdown-container{
+
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-tab{
+    color: var(--primary);
+    padding: 1rem;
+
+}
+.navbar-dropdown{
+    position: absolute;
+    z-index: 3;
+    padding: 1rem;
+    display: none;
+    flex-direction: column;
+    top: 5%;
+    right: 0%;
+    gap: 1rem;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    width: 200px;
+    transition: ease-in-out .3s;
+}
+.navbar-dropdown>a{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+    color: var(--text);
+    text-decoration: none;
+    text-align: left;
+    font-family: var(--secondary-font);
+    font-size: 15px;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+
+}
+.settings-tab{
+
+    cursor: pointer;
+}
+.navbar-dropdown>a:hover{
+
+    color: var(--primary);
+
+}
+@keyframes dropdownAnimation {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+.navbar-dropdown-active{
+
+    display: flex;
+    animation: dropdownAnimation .3s forwards;
+}
+.admin-sidebar-header{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+}
+.admin-sidebar-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80vh;
+    gap:1rem;
+
+    margin-top: 3rem;
+}
+
+.admin-sidebar-tab{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 1rem;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+
+    transition: ease-in-out .3s;
+    width: 100%;
+    padding: 0rem 3rem ;
+}
+.admin-sidebar-tab>a{
+    display: flex;
+    align-items: center;
+    transition: ease-in-out .3s;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+.admin-sidebar-tab:hover,.admin-sidebar-tab-active{
+
+    background-color: white;
+    color: var(--primary);
+}
+.admin-sidebar-tab-active{
+
+    border-left: 5px solid var(--secondary) ;
+}
+.admin-sidebar-tab-active>a{
+
+    color: var(--primary);
+}
+.admin-sidebar-tab:hover>a{
+    color: var(--primary);
+}
+/*Admin Layout end*/
+/*stats tab component start*/
+.stats-tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--secondary);
+    width: 25rem;
+    height: 15rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+.stats-tab-header{
+    flex: .3;
+
+    width: 100%;
+    position: relative;
+}
+.stats-icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: var(--secondary);
+    border-radius: 50%;
+    top: -90%;
+    left: 40%;
+    font-size: 45px;
+    width: 5rem;
+    height: 5rem;
+    color: var(--primary);
+
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+}
+
+.stats-tab-body{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    width: 100%;
+    color: white;
+    text-shadow: var(--primary) 2px 2px;
+}
+.stats-tab-body>h2{
+    font-size: 30px;
+    font-family: var(--secondary-font);
+
+}
+.stats-tab-body>h4{
+    font-size: 60px;
+}
+.stats-tab-footer{
+    background-color: var(--primary);
+    width: 100%;
+    display: flex;
+    flex: .3;
+}
+.stats-tab-footer>button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--primary);
+    border: none;
+    color: white;
+    font-size: 20px;
+    flex: 1;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+}
+
+/*stats tab component end*/
+
+/*dashboard page start*/
+
+.dashboard-container{
+
+
+    height: 100%;
+
+}
+.stats-container{
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    padding-top: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*dashboard page end*/
+
+/*appointment page start*/
+
+.appointments-container{
+    height: 100%;
+
+}
+.section-title{
+    color: var(--text);
+    font-style: italic;
+    padding-left: 10%;
+    margin: 3rem 0rem;
+}
+.empty-section{
+
+    width: 100%;
+    height: 20vh;
+    text-align: center;
+}
+.appointment-tabs-container{
+    padding: 1rem;
+    height: 50vh;
+    gap: 3rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+.appointment-tab{
+    display: flex !important;
+    flex-direction: column !important;
+    background-color: var(--primary) !important;
+    gap: 1rem !important;
+    height: 40vh !important;
+    width: 40vh !important;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px !important;
+    padding: 2rem !important;
+
+}
+.appointment-tab-body{
+    display: flex;
+    flex-direction: column;
+    flex: .8;
+    gap: 1rem;
+    justify-content: center;
+
+}
+.appointment-tab-name,
+.appointment-tab-date,
+.appointment-tab-time,
+.appointment-tab-client-status,
+.appointment-tab-client-details{
+    color: white;
+    flex: 1;
+}
+.appointment-tab-name>i,
+.appointment-tab-date>i,
+.appointment-tab-time>i,
+.appointment-tab-client-status>i,
+.appointment-tab-client-details>i{
+    color: var(--secondary);
+
+}
+.appointment-tab-name{
+    color: var(--secondary);
+    font-size: 30px;
+    text-align: center;
+}
+.appointment-tab-date,
+.appointment-tab-time,
+.appointment-tab-client-status{
+    display: flex;
+    gap: 1rem;
+    font-size: 20px;
+}
+.appointment-tab-client-details{
+    justify-content: right;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    color: var(--secondary);
+}
+.appointment-tab-client-details>a{
+    text-decoration: none;
+    color: var(--secondary);
+    transition: ease-in-out .3s;
+}
+.appointment-tab-client-details>a>i{
+
+    transition: ease-in-out .3s;
+}
+.appointment-tab-client-details>a:hover>i{
+
+    color: white;
+
+
+}
+.appointment-tab-footer{
+    flex: .2;
+}
+.appointment-tab-footer{
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+}
+.appointment-tab-footer>form>button{
+
+    background: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    transition: ease-in-out .3s;
+}
+.appointment-tab-footer>form>button:hover{
+
+    transform: rotate(360deg);
+}
+.appointment-tab-footer>form>button>i{
+
+    font-size: 4rem;
+}
+.appointment-tab-accept>button>i{
+    color: green;
+}
+.appointment-tab-reject>button>i{
+    color: darkred;
+}
+.appointments-container>.mySwiper{
+    padding-left: 2rem;
+    padding-top: 3rem;
+    height: 50vh;
+    background-image: url("../images/sectionbackground2.png");
+}
+.appointments-table-container{
+    padding:  0% 10%;
+    padding-bottom: 3rem;
+
+}
+td ,th{
+    text-align: center ;
+    padding: 1rem;
+    border: 1px solid black;
+    color: var(--primary);
+
+
+}
+.hadnt>i{
+    color: red;
+}
+.had>i{
+    color: green;
+}
+table, th, tr{
+    border-collapse: collapse;
+}
+.actions-td{
+    position: relative;
+}
+.dropdown-trigger{
+    padding: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+
+}
+.dropdown-actions, .dropdown-actions-active{
+    z-index: 3;
+    padding: 1rem;
+    display: none;
+    flex-direction: column;
+    top: 5%;
+    right: 0%;
+    gap: 1rem;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    width: 180px;
+    transition: ease-in-out .3s;
+    position: absolute;
+    left:50% ;
+
+}
+.dropdown-actions-active{
+    display: flex;
+}
+.dropdown-actions>form>button, .dropdown-actions-active>form>button{
+    color: var(--text);
+        background: none;
+        border: none;
+        outline: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    transition: ease-in-out .3s;
+}
+.dropdown-actions>form>button:hover,.dropdown-actions-active>form>button:hover{
+
+    color: var(--primary);
+    cursor: pointer;
+}
+.filter-sort>h3{
+    font-size: 15px;
+
+}
+.filter-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+
+}
+
+.filter-sort,.filter-search,.filter-checkbox{
+
+    flex: 1;
+}
+
+.filter-sort>h3>select{
+
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    color: var(--secondary);
+    outline: none;
+    background-color: var(--background);
+}
+.filter-sort>h3>select:focus{
+
+    outline: none;
+}
+.filter-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 40px;
+    width: 30%;
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+    transition: ease-in-out .3s;
+}
+.filter-search:has(input:focus){
+
+    border: 1px solid var(--primary);
+    color: var(--primary);
+
+}
+.filter-search>i{
+    display: flex;
+
+    align-items: center;
+    font-size: 25px;
+    padding: 1rem;
+
+
+    width: 15%;
+    height: 100%;
+}
+.filter-search>input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+.filter-checkbox{
+
+    position: relative;
+    text-align: right;
+}
+.filter-checkbox-dropdown{
+    z-index: 3;
+    padding: 1rem;
+    display: none;
+    flex-direction: column;
+    top: 100%;
+    right: 0%;
+    gap: 1rem;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    width: 200px;
+    transition: ease-in-out .3s;
+    left:50% ;
+    position: absolute;
+}
+.filter-checkbox-dropdown-active{
+
+    display: flex;
+    animation: dropdownAnimation .3s forwards;
+
+}
+.checkbox-tab{
+
+    display: flex;
+    justify-content: space-between;
+}
+.checkbox-tab>input{
+
+    accent-color: var(--secondary);
+}
+.filter-checkbox>p{
+
+    cursor: pointer;
+    color: var(--secondary);
+}
+/*appointment page end*/
+
+/*messages page start*/
+.messages-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0rem 10%;
+}
+.message-bar{
+
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background-color: var(--secondary);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    transition: ease-in-out .3s;
+
+}
+.message-bar-left, .message-bar-right{
+    display: flex;
+    justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+  color: var(--primary);
+  font-size: 20px;
+    flex-direction: column;
+
+}
+.message-name, .message-subject{
+    transition: ease-in-out .3s;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+.message-bar-right>a{
+
+    /* text-decoration: none;
+    border: 1px solid var(--primary);
+    padding: 1rem;
+    background-color:var(--primary) ;
+    color: white; */
+    color: var(--primary);
+}
+.message-bar-right>a:hover{
+    transition: ease-in-out .3s;
+    color: var(--secondary);
+}
+.message-bar:has(.message-bar-right>a:hover){
+    background-color: var(--primary);
+}
+.message-bar:has(.message-bar-right>a:hover)>.message-bar-left{
+
+    color: var(--secondary);
+
+}
+/*messages page end*/
+
+/*message page start*/
+.message-container{
+
+    margin:3rem 10% ;
+
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+}
+.message-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #0b0449;
+    height: 100px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+}
+.message-name>h1,.message-contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    color: var(--secondary);
+}
+.message-contact>h1{
+    cursor: pointer;
+    transition: ease-in-out .3s;
+
+}
+@keyframes appearAndWiggle {
+    0%{opacity: 0;}
+    25%{opacity: 1;}
+    50%{opacity: 1; transform: rotate(30deg) scale(1.2);}
+    75%{opacity: 1; transform: rotate(-30deg) ;}
+    100%{opacity: 1; transform: rotate(0deg) scale(1);}
+}
+.message-contact>h1:hover{
+
+    opacity: .8;
+    animation: appearAndWiggle .3s forwards ;
+}
+.message-body{
+    display: flex;
+    flex-direction:column ;
+    padding: 3rem 0rem;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+.message-gesture {
+    position: relative;
+
+    margin-left: 20px;
+    width: 80%;
+    padding: 10px;
+    background-color: var(--secondary);
+    text-align: left;
+    font: 400 .9em 'Open Sans', sans-serif;
+    border: 1px solid var(--secondary);
+    border-radius: 10px;
+}
+.message-gesture:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 15px solid var(--secondary);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    top: 0;
+    left: -15px;
+}
+
+.message-gesture:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 17px solid var(--secondary);
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    top: -1px;
+    left: -17px;
+}
+.message-gesture>p{
+
+    font-size: 20px;
+}
+.message-footer{
+
+    text-align: right;  padding: 1rem;
+
+}
+.message-footer>button{
+
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 50px;
+    color: darkred;
+}
+.message-footer>button:hover{
+    animation: appearAndWiggle .3s forwards ;
+
+
+}
+/*message page end*/
+
+/*clinics page start*/
+.clinics-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3rem 10%;
+    gap: 1rem;
+}
+
+.add-clinic-section{
+
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.primary-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid var(--primary);
+    font-size: 20px;
+    padding: .5rem 1rem ;
+    background-color: var(--primary);
+    color: white;
+    transition: ease-in-out .3s;
+    text-decoration: none;
+}
+.primary-btn:hover{
+
+    background: none;
+    color: var(--primary);
+    cursor: pointer;
+
+}
+.secondary-btn{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid var(--secondary);
+    font-size: 20px;
+    padding: .5rem 1rem ;
+    background-color: var(--secondary);
+    color: white;
+    transition: ease-in-out .3s;
+    text-decoration: none;
+}
+.secondary-btn:hover{
+
+    background: none;
+    color: var(--secondary);
+    cursor: pointer;
+
+}
+/*clinics page end*/
+
+/*create clinic page start*/
+.create-clinic-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+.create-clinic-form-header, .create-clinic-form-body{
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+.create-clinic-form-header{
+    margin-top: 3rem;
+}
+.file-upload-box{
+    background-color: white;
+    width: 90%;
+    height: 200px;
+    border: dotted var(--secondary) 2px;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+    gap: 1rem;
+}
+.file-upload-box:hover{
+    color: var(--primary);
+    border: dotted var(--primary) 2px;
+}
+.file-upload-box>p{
+    font-size: 10px;
+}
+.file-upload-box>input[type=file]{
+    display: none;
+}
+
+.row-inputs{
+
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    gap: 1rem;
+
+}
+.create-clinic-form-footer{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+}
+/*create clinic page end*/
+/*edit clinic page start*/
+
+.pictures-swiper{
+    height: 30vh;
+    width: 90%;
+}
+.pictures-swiper>.swiper-pagination>.swiper-pagination-bullet-active{
+
+    background-color: var(--secondary) !important;
+}
+.swiper-slide , .coaching-edit-picture{
+    padding: .5rem;
+    background-position:center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+}
+.swiper-slide>h1 , .coaching-edit-picture>h1{
+    display: flex;
+    justify-content: right;
+    color: darkred;
+}
+.swiper-slide>h1>i, .coaching-edit-picture>h1>i{
+
+    transition: ease-in-out .3s;
+}
+.swiper-slide>h1>i:hover, .coaching-edit-picture>h1>i:hover{
+
+    cursor: pointer;
+    animation: appearAndWiggle .3s forwards ;
+
+}
+
+/*edit clinic page end*/
+
+/*create coaching start*/
+
+
+.add-question{
+    transition: ease-in-out .3s;
+    cursor: pointer;
+
+}
+.add-question:hover{
+    color: var(--primary);
+}
+.questions-container{
+    display: flex;
+    gap: 1rem;
+    width: 90%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+.questions-container>h3{
+    display: flex;
+    gap: 1rem;
+    color: var(--secondary);
+    border: 1px dotted var(--secondary);
+    padding: 1rem;
+    transition: ease-in-out .3s;
+}
+.questions-container>h3:hover{
+    border: 1px dotted var(--primary);
+    color: var(--primary);
+}
+.questions-container>h3>i{
+    cursor: pointer;
+}
+.admin-form-textarea{
+    transition: ease-in-out .3s;
+    width: 90%;
+    outline: none;
+    border: 1px solid var(--secondary);
+    padding: 1rem;
+    resize: vertical;
+}
+.admin-form-textarea:focus{
+    border: 1px solid var(--primary);
+}
+
+.input-container>select>option{
+    padding: 3rem;
+    color: var(--secondary);
+    font-size: 20px;
+    width: 100%;
+    height: 20px;
+
+}
+.input-container>select>option:nth-child(1){
+
+    color: var(--text);
+}
+/*create coaching end*/
+
+/*edit coaching start*/
+.coaching-edit-picture{
+
+    height: 200px;
+    width: 30%;
+}
+/*edit coaching end*/
+
+/*resources start*/
+td>img{
+
+    width: 200px;
+    height: 100px;
+}
+/*resources end*/
+/*rates and debates start*/
+.checkbox-input-container{
+
+    color: var(--primary);
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap:1rem ;
+
+}
+.checkbox-input-container>input{
+
+    accent-color: var(--secondary);
+}
+/*rates and debates end*/
+
+/*service create start*/
+.treatables-container{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 90%;
+    border: 1px solid var(--secondary);
+    min-height: 200px;
+    height: auto;
+    padding: 2rem;
+    background-color: white;
+}
+.treatables-container>span{
+    padding: 1rem;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+}
+.treatables-container>.unselected{
+
+    border: var(--secondary) 1px solid;
+    color: var(--secondary);
+    transition: ease-in-out .3s;
+}
+.treatables-container>.selected{
+
+    border: var(--primary) 1px solid;
+    color: var(--primary);
+    transition: ease-in-out .3s;
+}
+/*service create end*/
+/*notification start*/
+@keyframes notification {
+    from{left: 100%;}
+    to{left: 89%;}
+}
+.notification{
+    padding:1rem ;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    width: 200px;
+    height: 100px;
+    position: fixed;
+    z-index: 4;
+    top: 8%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    transition: ease-in-out .3s;
+    color: var(--primary);
+    font-weight: bold;
+}
+.granted{
+    display: flex;
+    animation:notification .3s forwards;
+
+    background-color: lightgreen;
+}
+.rejected{
+    display: flex;
+    animation:notification .3s forwards;
+    background-color: lightcoral;
+}
+.notifications-container{
+    position: fixed;
+    gap: 1rem;
+    top: 8%;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    left: 89%;
+    height: 500px;
+
+}
+.notifications-container>.notification{
+    position:static;
+}
+/*notification finish*/
+                              /*RESPONSIVENESS*/
+@media only screen and (max-width:768px){
+
+    .login-container{
+        flex-direction: column-reverse;
+    }
+    .layout-left{
+        position: fixed;
+        left: -100%;
+        width: 300px;
+        transition: ease-in-out .3s;
+        z-index: 2;
+
+    }
+    .sidebar-arrow,.sidebar-arrow-active{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        top: 8%;
+        font-size: 1rem;
+        padding-left: 1rem;
+        color: var(--primary);
+        position: fixed;
+        z-index: 3;
+    }
+    .sidebar-arrow>i{
+        transition: ease-in-out .3s;
+    }
+    .sidebar-arrow-active{
+
+        color: var(--secondary);
+    }
+    .sidebar-arrow-active>i{
+
+        transform: rotate(180deg);
+    }
+    .layout-right{
+        width: 100%;
+    }
+
+}

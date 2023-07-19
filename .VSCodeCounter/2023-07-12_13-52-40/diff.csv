@@ -1,0 +1,9 @@
+"filename", "language", "PHP", "comment", "blank", "total"
+"c:\Users\HP\Desktop\coding\goodthinkingpsychology\app\Http\Controllers\UserController.php", "PHP", 32, 0, 11, 43
+"c:\Users\HP\Desktop\coding\goodthinkingpsychology\app\Http\Controllers\adminController.php", "PHP", -12, 0, -7, -19
+"c:\Users\HP\Desktop\coding\goodthinkingpsychology\app\Mail\AdminMail.php", "PHP", 21, 14, 10, 45
+"c:\Users\HP\Desktop\coding\goodthinkingpsychology\database\migrations\2023_07_11_161807_drop_admins_table.php", "PHP", 21, 6, 4, 31
+"c:\Users\HP\Desktop\coding\goodthinkingpsychology\resources\views\admin\PasswordResetView.blade.php", "PHP", 14, 0, 1, 15
+"c:\Users\HP\Desktop\coding\goodthinkingpsychology\resources\views\admin\login.blade.php", "PHP", 1, 0, 0, 1
+"c:\Users\HP\Desktop\coding\goodthinkingpsychology\routes\web.php", "PHP", 4, 0, -1, 3
+"Total", "-", 81, 20, 18, 119
