@@ -1182,6 +1182,10 @@ td>img{
 }
 /*notification finish*/
                               /*RESPONSIVENESS*/
+
+.sidebar-arrow{
+    display: none;
+}
 @media only screen and (max-width:768px){
 
     .login-container{
